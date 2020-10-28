@@ -1,0 +1,31 @@
+<%- include('partials/header'); -%>
+
+<div class="container pt-3">
+  <div class="card">
+    <div class="card-body">
+      <h1>Home</h1>
+      <p><%= homeStartingContent %></p>
+    </div>
+  </div>
+</div>
+
+<% const reversed = posts.reverse(); %>
+<% reversed.forEach(function (post) { %>
+  <div class="container pt-3">
+    <div class="card">
+      <div class="card-body">
+        <h1> <%= post.title %> </h1>
+        <p> 
+          <%= post.content.substring(0, 100) + " ..." %> 
+          <a href="/posts/<%= post._id %>">Read More</a>
+        </p>
+      </div>
+    </div>
+  </div>
+<% }); %>
+
+
+
+
+<%- include('partials/footer'); -%>
+
